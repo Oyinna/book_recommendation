@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Munachimuso1.",
+    "database": "book_recommendation",
+    "host": "localhost",
+    "dialect": "postgresql"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Munachimuso1.",
+    "database": "book_recommendation",
+    "host": "localhost",
+    "dialect": "postgresql"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Munachimuso1.",
+    "database": "book_recommendation",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
