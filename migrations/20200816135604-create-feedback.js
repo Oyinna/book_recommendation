@@ -14,17 +14,14 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 1,
       },
       book_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 1,
       },
       feedback: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'liked the book',
       },
       createdAt: {
         allowNull: false,

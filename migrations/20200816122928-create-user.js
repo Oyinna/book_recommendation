@@ -14,18 +14,19 @@ module.exports = {
       firstname: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'Chinyelu',
       },
       lastname: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'Ibute',
       },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'chinyeluibute@gmail.com',
         unique: true,
+      },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
