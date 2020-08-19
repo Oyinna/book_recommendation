@@ -28,7 +28,7 @@ const FeedbackController = {
           message: 'Failed! please try again.',
         });
       }
-      return res.status(200).send({
+      return res.status(201).send({
         success: true,
         message: 'Thank you for the feedback',
       });

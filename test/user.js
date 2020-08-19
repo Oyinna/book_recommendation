@@ -16,7 +16,7 @@ describe('test the users API', () => {
       const user = {
         firstname: 'Chinyelu',
         lastname: 'Ibute',
-        email: 'chinyeluibute11@gmail.com',
+        email: 'chinyeluibute14@gmail.com',
         password: 'okay',
       };
       chai.request(app)
