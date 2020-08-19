@@ -11,13 +11,12 @@ const UserController = {
       const {
         firstname, lastname, email, password,
       } = req.body;
-
       // check if user exist
       const userExist = await User.userExist(email);
       if (userExist) {
         return res.status(409).send({
           success: false,
-          message: `User already exist ${userExist.email}`,
+          message: `${userExist.email} already exist`,
         });
       }
 
@@ -52,7 +51,7 @@ const UserController = {
         });
       }
       const accessToken = generateToken(user);
-      return res.status(200).send({
+      return res.status(201).send({
         accessToken,
         success: true,
         data: user.id,
@@ -71,6 +70,14 @@ const UserController = {
       const {
         email, password,
       } = req.body;
+
+      // check for empty fields
+      if (!email || !password) {
+        return res.status(400).send({
+          success: false,
+          message: 'complete the empty fields before submitting',
+        });
+      }
       // check if user exist
       const userInfo = await User.userExist(email);
 
