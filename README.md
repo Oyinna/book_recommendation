@@ -8,16 +8,19 @@ Project Timelines
 4.	It recommends exactly 20 books to users.
 6.	Users can give feedback of either “Liked The book”, “Disliked The book” or “Not Interested” on every book recommended to them.
 ## Tools 
-•	Framework: Node/Express 
-•	Linting Library: ESLint 
-•	Style Guide: Airbnb
-•	Database: Postgresql
-•	Testing Framework: Mocha
+*	Framework: Node/Express 
+*	Linting Library: ESLint 
+*	Style Guide: Airbnb
+*	Database: Postgresql
+*	Testing Framework: Mocha
 
 ## Installation
-Requires Node js, Version 8 or higher
-Then clone the repository or download and uncompress:
+* Requires Node js, Version 8 or higher and posgresql
+* Then clone the repository or download and uncompress:
 git clone https://github.com/Oyinna/book_recommendation.git
-Start the App by running:
-npm install
-npm start
+* Start the App by running:
+    * npm install to install all the dependencies
+
+    * npx sequelize-cli db:migrate to migrate the database tables
+
+    * npm start to start the server
