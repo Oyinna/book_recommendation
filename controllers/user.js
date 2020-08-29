@@ -1,6 +1,7 @@
-require('dotenv').config();
+// require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const validator = require('email-validator');
 const User = require('../dbfunction/users');
 
 function generateToken(user) { return jwt.sign(user.toJSON(), process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1w' }); }
@@ -11,14 +12,6 @@ const UserController = {
       const {
         firstname, lastname, email, password,
       } = req.body;
-      // check if user exist
-      const userExist = await User.userExist(email);
-      if (userExist) {
-        return res.status(409).send({
-          success: false,
-          message: `${userExist.email} already exist`,
-        });
-      }
 
       // check for empty fields
       if (!firstname || !lastname || !email || !password) {
@@ -28,11 +21,21 @@ const UserController = {
         });
       }
 
+      // check if user exist
+      const userExist = await User.userExist(email);
+      if (userExist) {
+        return res.status(409).send({
+          success: false,
+          message: `${userExist.email} already exist`,
+        });
+      }
       // validate email
       // eslint-disable-next-line no-useless-escape
-      const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      const validAmail = re.test(String(email).toLowerCase());
-      if (!validAmail) {
+      // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      // const validAmail = re.test(String(email).toLowerCase());
+
+      const validEmail = validator.validate(email);
+      if (!validEmail) {
         return res.status(400).send({
           success: false,
           message: 'enter a valid email address',

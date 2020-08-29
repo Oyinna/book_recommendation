@@ -4,19 +4,12 @@ const FeedbackController = {
   createNewRecord: async (req, res) => {
     try {
       const feedback = req.body;
-      //   check if feedback is an array
+      //   check if feedback is an array and complete
       const isArray = Array.isArray(feedback);
-      if (!isArray) {
+      if (!isArray && feedback.length !== 20) {
         return res.status(400).send({
           success: false,
           message: 'complete the feedback!',
-        });
-      }
-      // check if feedback is complete
-      if (feedback.length !== 20) {
-        return res.status(400).send({
-          success: false,
-          message: 'complete the feedback',
         });
       }
 
