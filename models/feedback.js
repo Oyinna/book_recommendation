@@ -17,12 +17,10 @@ const Feedback = sequelize.define('Feedback', {
   book_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    defaultValue: 1,
   },
   feedback: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'liked the book',
   },
 }, {
   sequelize,

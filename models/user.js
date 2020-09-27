@@ -13,18 +13,19 @@ const User = sequelize.define('User', {
   firstname: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Chinyelu',
   },
   lastname: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Ibute',
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'chinyeluibute@gmail.com',
     unique: true,
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
 }, {
   sequelize,

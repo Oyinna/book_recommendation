@@ -13,22 +13,18 @@ const Book = sequelize.define('Book', {
   isn: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    defaultValue: 2182718,
   },
   title: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Improve Your Bowls',
   },
   author: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Tony Allcock',
   },
   genre: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'Sports & Outdoors',
   },
 }, {
   sequelize,

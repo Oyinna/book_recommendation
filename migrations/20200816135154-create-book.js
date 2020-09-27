@@ -14,22 +14,18 @@ module.exports = {
       isn: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        defaultValue: 2182718,
       },
       title: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'Improve Your Bowls',
       },
       author: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'Tony Allcock',
       },
       genre: {
         type: Sequelize.STRING,
         allowNull: false,
-        defaultValue: 'Sports & Outdoors',
       },
       createdAt: {
         allowNull: false,
