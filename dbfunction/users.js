@@ -10,12 +10,25 @@ const UserDBClass = {
     }, {
       fields: ['firstname', 'lastname', 'email', 'password'],
     });
-
+    if (!user) {
+      return false;
+    }
     return user;
   },
 
   userExist: async (email) => {
     const userExist = await User.findOne({ where: { email } });
+    if (!userExist) {
+      return false;
+    }
+    return userExist;
+  },
+
+  fetchUser: async (userId) => {
+    const userExist = await User.findOne({ where: { _id: userId } });
+    if (!userExist) {
+      return false;
+    }
     return userExist;
   },
 
