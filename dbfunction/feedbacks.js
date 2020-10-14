@@ -5,7 +5,9 @@ const FeedDBClass = {
     const feedbackDetail = await Feedback.bulkCreate(feedback, {
       fields: ['user_id', 'book_id', 'feedback'],
     });
-
+    if (!feedbackDetail) {
+      return false;
+    }
     return feedbackDetail;
   },
 
