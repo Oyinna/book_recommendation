@@ -10,15 +10,15 @@ const sequelize = require('./index');
 const Feedback = require('./feedback');
 
 const Book = sequelize.define('Book', {
-  isn: {
-    type: DataTypes.INTEGER,
+  asin: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
   title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  author: {
+  auther: {
     type: DataTypes.STRING,
     allowNull: false,
   },

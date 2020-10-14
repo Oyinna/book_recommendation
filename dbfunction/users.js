@@ -24,8 +24,18 @@ const UserDBClass = {
     return userExist;
   },
 
+  fetchAll: async () => {
+    const userExist = await User.findAll();
+    console.log('okay 1');
+    console.log(userExist, 'okay');
+    if (!userExist.length) {
+      return false;
+    }
+    return userExist;
+  },
+
   fetchUser: async (userId) => {
-    const userExist = await User.findOne({ where: { _id: userId } });
+    const userExist = await User.findOne({ where: { id: userId } });
     if (!userExist) {
       return false;
     }

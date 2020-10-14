@@ -11,15 +11,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      isn: {
-        type: Sequelize.INTEGER,
+      asin: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
       title: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      author: {
+      auther: {
         type: Sequelize.STRING,
         allowNull: false,
       },
